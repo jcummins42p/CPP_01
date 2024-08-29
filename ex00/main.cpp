@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <jcummins@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 13:40:44 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/11 16:17:01 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:58:05 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <algorithm>
-#include <cctype>
+#include "Zombie.hpp"
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
+	Zombie *a = newZombie("Kevin");	// heap/dynamic allocated zombie pointer
+	a->announce();
+
+	Zombie b = Zombie("Denethor");	// stack allocation local zombie
+	b.announce();
+
 	{
-		for (int i = 1; i < argc; i++)
-		{
-			std::string arg = argv[i];
-			std::transform(arg.begin(), arg.end(), arg.begin(), ::toupper);
-			std::cout << arg;
-			if (i < argc - 1)
-				std::cout << " ";
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+		Zombie c("Summer");	// stack allocate local to this scope
+		c.announce();
+	}						// c goes out of scope and is destroyed here
+
+	randomChump("Gurprute");	// another stack allocation within function
+
+	delete a;
+
+	return (0);				// b is the last to be destroyed as it leaves scope
 }
