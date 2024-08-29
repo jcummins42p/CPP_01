@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:26:22 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 16:41:21 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:52:19 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 class	Zombie
 {
 	public:
-		Zombie(std::string name);
+		Zombie();
 		Zombie(const Zombie& zombie);
 		Zombie& operator=(const Zombie& zombie);
 		~Zombie(void);
 
-		void announce(void);
+		void	announce(void);
+		void	setname(std::string name);
 	private:
 		std::string	_name;
 };

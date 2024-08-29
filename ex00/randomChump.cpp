@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:39:32 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 16:51:43 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:56:50 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void randomChump(std::string name)
 {
-	Zombie	randomchump(name);
+	Zombie	randomchump;
+	randomchump.setname(name);
 	randomchump.announce();
 }

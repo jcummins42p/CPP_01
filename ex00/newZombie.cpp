@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:56:30 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 16:49:55 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:54:26 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 
 Zombie* newZombie(std::string name)
 {
-	return new Zombie(name);
+	Zombie *out = new Zombie;
+	out->setname(name);
+	return (out);
 }
