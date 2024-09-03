@@ -6,20 +6,21 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:28:46 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 18:54:15 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:13:43 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
+#include "HumanB.hpp"
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) :
+	_name(name),
+	_weapon(weapon)
 {
-	_name = name;
-	_weapon = weapon;
 	std::cout 	<< _name << " enters the fray brandishing a "
-				<< _weapon << std::endl;
+				<< _weapon.getType() << std::endl;
 }
 
 //HumanA::HumanA(const HumanA& humana)
@@ -39,5 +40,11 @@ HumanA::HumanA(std::string name, Weapon weapon)
 
 HumanA::~HumanA(void)
 {
-	std::cout << "Human of type A ceased to exist" << std::endl;
+	std::cout	<< "Human of type A ceased to exist" << std::endl;
+}
+
+void	HumanA::attack(void)
+{
+	std::cout 	<< _name << " swings with their "
+				<< _weapon.getType()  << std::endl;
 }

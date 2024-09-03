@@ -6,20 +6,27 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:35:45 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 18:59:47 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:16:54 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+
+# include <iostream>
+# include "Weapon.hpp"
 
 class	HumanB
 {
 	public:
 		HumanB(std::string name);
-		//HumanB::HumanB(const HumanB& humana);
-		//HumanB&	HumanB::operator=(const HumanB& humana);
 		~HumanB(void);
 
-		void	attack();
+		void	attack(void);
+		void	setWeapon(Weapon &weapon);
 	private:
 		std::string	_name;
-		Weapon		weapon;
+		Weapon		*_weapon;
 } ;
+
+#endif

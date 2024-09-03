@@ -6,14 +6,14 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:49:07 by jcummins          #+#    #+#             */
-/*   Updated: 2024/08/29 18:53:36 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:19:07 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include "Weapon.hpp"
 
 int	main(void)
 {
