@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:28:46 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/03 18:20:23 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:52:12 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ HumanB::HumanB(std::string name) :
 
 HumanB::~HumanB(void)
 {
-	std::cout << "Human of type B ceased to exist" << std::endl;
+	std::cout << _name << " expires painfully" << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->_weapon = &weapon;
-	std::cout << _name << " picks up a " << _weapon << std::endl;
+	std::cout << _name << " picks up a " << _weapon->getType() << std::endl;
 }
 
 void	HumanB::attack(void)
 {
-	std::cout	<< _name << " swings with their "
+	std::cout	<< _name << " swings with "
 				<< _weapon->getType() << std::endl;
 }
