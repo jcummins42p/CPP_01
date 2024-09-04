@@ -6,11 +6,11 @@
 #    By: jcummins <jcummins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2024/08/11 15:31:49 by jcummins         ###   ########.fr        #
+#    Updated: 2024/09/04 16:38:12 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = harl
 
 SRC_DIR = .
 OBJ_DIR = obj
