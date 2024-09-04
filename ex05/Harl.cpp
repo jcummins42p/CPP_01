@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:57:55 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/04 15:42:47 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:15:55 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Harl::~Harl(void)
 {
 }
 
-void	Harl::debug(void)
+void	Harl::_debug(void)
 {
 	std::cout << "I like your shirt." << std::endl;
 }
@@ -47,7 +47,7 @@ void	Harl::complain(std::string level)
 	void (Harl::*complaint[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
 
 	for (int i = 0; i < 4; i++)
-		if (_levels[i] == level)
+		if (levels[i] == level)
 		{
 			(this->*complaint[i])();
 			return;

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:39:21 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/04 15:34:31 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:17:50 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	harl.complain("INFO");
 	harl.complain("WARNING");
 	harl.complain("ERROR");
+	harl.complain("WRONGPARAMETER");
 
 	return (0);
 }
