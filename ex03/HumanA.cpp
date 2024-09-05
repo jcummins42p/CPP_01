@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:28:46 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/04 17:08:05 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:17:22 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon) :
 	_name(name),
-	_weapon(&weapon)
+	_weapon(weapon)
 {
 	std::cout 	<< _name << " enters the fray brandishing a "
-				<< _weapon->getType() << std::endl;
+				<< _weapon.getType() << std::endl;
 }
 
 //HumanA::HumanA(const HumanA& humana)
@@ -46,5 +46,5 @@ HumanA::~HumanA(void)
 void	HumanA::attack(void)
 {
 	std::cout 	<< _name << " swings with "
-				<< _weapon->getType()  << std::endl;
+				<< _weapon.getType()  << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:35:45 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/04 17:06:42 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:14:41 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ class	HumanA
 		~HumanA(void);
 
 		void	attack(void);
-		void	setWeapon(Weapon weapon);
 	private:
 		std::string	_name;
-		Weapon		*_weapon;
+		Weapon		&_weapon;
 } ;
 
 #endif
