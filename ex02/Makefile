@@ -6,7 +6,7 @@
 #    By: jcummins <jcummins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2024/08/29 18:12:48 by jcummins         ###   ########.fr        #
+#    Updated: 2024/11/19 16:10:06 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ OBJ_DIR = obj
 CXX = c++
 CXXFLAGS = -g -Werror -Wextra -Wall -pedantic -std=c++98
 
-SRCS = $(shell find $(SRC_DIR) -name '*.cpp')
-HEADS = $(shell find $(HEAD_DIR) -name '*.hpp')
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+SRCS = main.cpp
+HEADS =
+OBJS = $(SRCS:%.cpp=%.o)
 
 all: $(NAME)
 
@@ -27,18 +27,17 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) $^ -o $@
 	@echo "✅ Linking object files into executable $@"
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADS)
-	@mkdir -p $(@D)
+%.o: %.cpp $(HEADS)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 	@echo "✅ Complied object file $@ from source file $<"
 
 clean:
 	@echo "💥 Removing all object files"
-	@rm -rf $(OBJ_DIR)
+	@rm -f $(OBJS)
 
 fclean: clean
 	@echo "💥 Removing all object files and executable"
-	@rm -rf $(NAME)
+	@rm -f $(NAME)
 
 re:	fclean all
 
